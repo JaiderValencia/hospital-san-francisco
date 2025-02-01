@@ -1,11 +1,23 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import { sync as globSync } from 'glob';
+
+const cssFiles = globSync('resources/assets/**/*.css')
+const jsFiles = globSync('resources/assets/**/*.js')
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [
+                ...jsFiles,
+                ...cssFiles
+            ],
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+            external: ['@popperjs/core','lodash.throttle','lodash.debounce']
+        }
+    }
 });
