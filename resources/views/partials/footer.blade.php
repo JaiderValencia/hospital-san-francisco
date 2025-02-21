@@ -3,7 +3,7 @@
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
-                <a href="/" class="logo d-flex align-items-center">
+                <a href="{{route('public.home')}}" class="logo d-flex align-items-center">
                     <span class="sitename">Medicio</span>
                 </a>
                 <div class="footer-contact pt-3">
@@ -23,9 +23,9 @@
             <div class="col-lg-2 col-md-3 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{route('public.home')}}">Home</a></li>
                     <li><a href="#">About us</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="{{route('public.services')}}">Services</a></li>
                     <li><a href="#">Terms of service</a></li>
                     <li><a href="#">Privacy policy</a></li>
                 </ul>
